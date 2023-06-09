@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     
     for eventRecord in event["Records"]:
         record = parserRecord(eventRecord)
-        addHistoryRow(record)
+        # addHistoryRow(record)
 
     return {
         "statusCode": 200,
@@ -19,21 +19,24 @@ def lambda_handler(event, context):
     }
 
 def parserRecord(record):
+    image = {}
     result = {}
+
     eventName = record['eventName']
-    
-    result['eventName'] = eventName
-    result['id'] = record['dynamodb']['Keys']['id']["S"]
-    result['customerId'] = record['dynamodb']['Keys']['customerId']["S"]
-    result['date'] = datetime.date.today().strftime('%Y-%m-%d %H:%M:%S')
-    
+
     if eventName == 'REMOVE' or eventName == 'MODIFY':
-        result['document'] = record['dynamodb']['OldImage']['document']["S"]
-        result['name'] = record['dynamodb']['OldImage']['name']["S"]
+        image = record['dynamodb']['OldImage']
     else:
-        result['document'] = record['dynamodb']['NewImage']['document']["S"]
-        result['name'] = record['dynamodb']['NewImage']['name']["S"]
-    
+        image = record['dynamodb']['NewImage']
+
+    for key, value in image.items():
+        result[key] = value[list(value.keys())[0]]
+
+    result['eventName'] = eventName
+    result['data'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+    print(result)
+
     return result
 
 def addHistoryRow(row):
