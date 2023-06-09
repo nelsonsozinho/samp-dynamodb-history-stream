@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     
     for eventRecord in event["Records"]:
         record = parserRecord(eventRecord)
-        # addHistoryRow(record)
+        addHistoryRow(record)
 
     return {
         "statusCode": 200,
