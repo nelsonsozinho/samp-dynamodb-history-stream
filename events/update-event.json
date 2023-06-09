@@ -1,0 +1,54 @@
+{
+   "Records":[
+      {
+         "eventID":"182e3eb94c54e6d171ab606865ed9dd1",
+         "eventName":"MODIFY",
+         "eventVersion":"1.1",
+         "eventSource":"aws:dynamodb",
+         "awsRegion":"us-east-1",
+         "dynamodb":{
+            "ApproximateCreationDateTime":1685649381.0,
+            "Keys":{
+               "customerId":{
+                  "S":"e421816a-fb19-41e4-b0ce-aa4d2dfec470"
+               },
+               "id":{
+                  "S":"32cd4d18-c4fc-4cc7-b29a-ac18d31ec61a"
+               }
+            },
+            "NewImage":{
+               "document":{
+                  "S":"324544566665"
+               },
+               "customerId":{
+                  "S":"e421816a-fb19-41e4-b0ce-aa4d2dfec470"
+               },
+               "name":{
+                  "S":"Francis Drake"
+               },
+               "id":{
+                  "S":"32cd4d18-c4fc-4cc7-b29a-ac18d31ec61a"
+               }
+            },
+            "OldImage":{
+               "document":{
+                  "S":"898989898"
+               },
+               "customerId":{
+                  "S":"e421816a-fb19-41e4-b0ce-aa4d2dfec470"
+               },
+               "name":{
+                  "S":"Francis Drake"
+               },
+               "id":{
+                  "S":"32cd4d18-c4fc-4cc7-b29a-ac18d31ec61a"
+               }
+            },
+            "SequenceNumber":"236800200000000052347770198",
+            "SizeBytes":323,
+            "StreamViewType":"NEW_AND_OLD_IMAGES"
+         },
+         "eventSourceARN":"arn:aws:dynamodb:us-east-1:214817766900:table/dev_customer_financial/stream/2023-05-30T17:57:37.419"
+      }
+   ]
+}

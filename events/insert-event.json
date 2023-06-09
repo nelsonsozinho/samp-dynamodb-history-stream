@@ -1,0 +1,40 @@
+{
+   "Records":[
+      {
+         "eventID":"5a4b822139c7fb95fa9d20d6272679ba",
+         "eventName":"INSERT",
+         "eventVersion":"1.1",
+         "eventSource":"aws:dynamodb",
+         "awsRegion":"us-east-1",
+         "dynamodb":{
+            "ApproximateCreationDateTime":1685648952.0,
+            "Keys":{
+               "customerId":{
+                  "S":"6c63b53c-1d7b-45b7-a124-2be184601cb3"
+               },
+               "id":{
+                  "S":"a04e78a9-a5eb-47e0-865d-1d6cb108516a"
+               }
+            },
+            "NewImage":{
+               "document":{
+                  "S":"909090909"
+               },
+               "customerId":{
+                  "S":"6c63b53c-1d7b-45b7-a124-2be184601cb3"
+               },
+               "name":{
+                  "S":"Simple Amber"
+               },
+               "id":{
+                  "S":"a04e78a9-a5eb-47e0-865d-1d6cb108516a"
+               }
+            },
+            "SequenceNumber":"236799900000000052346909025",
+            "SizeBytes":201,
+            "StreamViewType":"NEW_AND_OLD_IMAGES"
+         },
+         "eventSourceARN":"arn:aws:dynamodb:us-east-1:214817766900:table/dev_customer_financial/stream/2023-05-30T17:57:37.419"
+      }
+   ]
+}
